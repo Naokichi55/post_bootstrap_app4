@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_082903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", comment: "投稿", force: :cascade do |t|
     t.string "title", null: false, comment: "タイトル"
     t.text "content", null: false, comment: "内容"
     t.datetime "created_at", null: false

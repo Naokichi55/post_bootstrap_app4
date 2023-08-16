@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+  @post = Post.find(params[:id])
   end
 
   def new
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create!(post_params)
-    redorect_to post
+    redirect_to post
   end
 
   def edit
@@ -24,7 +25,9 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
-    params.require(:post).permit(:title,:contet)
+    params.require(:post).permit(:title,:content)
   end
+
 end
